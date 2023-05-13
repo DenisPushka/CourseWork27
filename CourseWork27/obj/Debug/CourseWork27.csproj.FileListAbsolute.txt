@@ -1,0 +1,11 @@
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\bin\Debug\CourseWork27.exe.config
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\bin\Debug\CourseWork27.exe
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\bin\Debug\CourseWork27.pdb
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.csproj.AssemblyReference.cache
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.Properties.Resources.resources
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.csproj.GenerateResource.cache
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.csproj.CoreCompileInputs.cache
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.exe
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.pdb
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.MainForm.resources
+C:\Users\User\RiderProjects\CourseWork27\CourseWork27\obj\Debug\CourseWork27.csproj.SuggestedBindingRedirects.cache
