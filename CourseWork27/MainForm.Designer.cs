@@ -29,6 +29,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.radioButton_A11 = new System.Windows.Forms.RadioButton();
@@ -61,6 +64,7 @@
             this.button_reset_B = new System.Windows.Forms.Button();
             this.button_reset_A = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView_Binsert = new System.Windows.Forms.DataGridView();
             this.dataGridView_Count = new System.Windows.Forms.DataGridView();
             this.dataGridView_C = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,6 +81,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.radioButton_Step = new System.Windows.Forms.RadioButton();
             this.radioButton_AutoMode = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_A)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Binsert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Count)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_C)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -397,7 +403,7 @@
             this.groupBox1.Controls.Add(this.button_reset_B);
             this.groupBox1.Controls.Add(this.button_reset_A);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 165);
+            this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(864, 166);
             this.groupBox1.TabIndex = 1;
@@ -438,7 +444,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(299, 103);
+            this.label3.Location = new System.Drawing.Point(321, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 29);
             this.label3.TabIndex = 3;
@@ -478,17 +484,55 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.dataGridView_Binsert);
             this.groupBox2.Controls.Add(this.dataGridView_Count);
             this.groupBox2.Controls.Add(this.dataGridView_C);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 400);
+            this.groupBox2.Location = new System.Drawing.Point(6, 329);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(870, 135);
+            this.groupBox2.Size = new System.Drawing.Size(870, 194);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Регистры";
+            // 
+            // dataGridView_Binsert
+            // 
+            this.dataGridView_Binsert.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Binsert.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_Binsert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_Binsert.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_Binsert.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView_Binsert.Location = new System.Drawing.Point(439, 135);
+            this.dataGridView_Binsert.Name = "dataGridView_Binsert";
+            this.dataGridView_Binsert.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Binsert.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_Binsert.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridView_Binsert.Size = new System.Drawing.Size(425, 50);
+            this.dataGridView_Binsert.TabIndex = 4;
             // 
             // dataGridView_Count
             // 
@@ -672,6 +716,14 @@
             this.radioButton_AutoMode.Text = "Автоматический";
             this.radioButton_AutoMode.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(379, 149);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 36);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "B =";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,6 +747,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_A)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Binsert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Count)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_C)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -705,6 +758,10 @@
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label6;
+
+        private System.Windows.Forms.DataGridView dataGridView_Binsert;
 
         private System.Windows.Forms.CheckedListBox checkedListBox_Dt;
         private System.Windows.Forms.CheckedListBox checkedListBox_A;

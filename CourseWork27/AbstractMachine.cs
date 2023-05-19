@@ -14,7 +14,7 @@ namespace CourseWork27
         /// <summary>
         /// Делитель.
         /// </summary>
-        protected uint B { get; set; }
+        public uint B { get;internal set; }
 
         /// <summary>
         /// Частное.

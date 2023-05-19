@@ -173,7 +173,7 @@
             }
 
             // Отображение данных.
-            _form.UpdateInfoRegister(C, Count);
+            _form.UpdateInfoRegister(C, Count, B);
             _form.UpdateStateMemory(_state);
             LogicalDevice();
         }

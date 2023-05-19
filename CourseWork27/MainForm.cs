@@ -45,11 +45,13 @@ namespace CourseWork27
 
             dataGridView_A.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dataGridView_B.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView_Binsert.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dataGridView_C.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dataGridView_Count.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
 
             dataGridView_A.Font = new Font("Microsoft Sans Serif", 8);
             dataGridView_B.Font = new Font("Microsoft Sans Serif", 8);
+            dataGridView_Binsert.Font = new Font("Microsoft Sans Serif", 8);
             dataGridView_C.Font = new Font("Microsoft Sans Serif", 8);
             dataGridView_Count.Font = new Font("Microsoft Sans Serif", 8);
             const int widthColumn = 25;
@@ -83,29 +85,35 @@ namespace CourseWork27
                 dataGridView_C.Columns[index].Width = widthColumn;
                 dataGridView_B.Columns.Add("column_" + i, i.ToString());
                 dataGridView_B.Columns[index].Width = widthColumn;
+                dataGridView_Binsert.Columns.Add("column_" + i, i.ToString());
+                dataGridView_Binsert.Columns[index].Width = widthColumn;
                 width += widthColumn;
             }
-            
+
             dataGridView_B.Height = 45;
             dataGridView_B.Width = width + 3;
+            dataGridView_Binsert.Height = 45;
+            dataGridView_Binsert.Width = width + 3;
             dataGridView_C.Height = 45;
             dataGridView_C.Width = width + 3;
 
             dataGridView_A.Rows.Add(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             dataGridView_B.Rows.Add(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            dataGridView_Binsert.Rows.Add(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             dataGridView_C.Rows.Add(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             dataGridView_Count.Rows.Add(0, 0, 0, 0);
 
-            dataGridView_A.BorderStyle = dataGridView_B.BorderStyle = dataGridView_C.BorderStyle =
-                dataGridView_Count.BorderStyle = BorderStyle.FixedSingle;
+            dataGridView_A.BorderStyle = dataGridView_B.BorderStyle = dataGridView_Binsert.BorderStyle =
+                dataGridView_C.BorderStyle = dataGridView_Count.BorderStyle = BorderStyle.FixedSingle;
 
-            dataGridView_A.RowHeadersVisible = dataGridView_B.RowHeadersVisible = dataGridView_C.RowHeadersVisible =
-                dataGridView_Count.RowHeadersVisible = false;
+            dataGridView_A.RowHeadersVisible = dataGridView_B.RowHeadersVisible =
+                dataGridView_Binsert.RowHeadersVisible =
+                    dataGridView_C.RowHeadersVisible = dataGridView_Count.RowHeadersVisible = false;
 
             dataGridView_A.RowsDefaultCellStyle.Alignment = dataGridView_B.RowsDefaultCellStyle.Alignment =
-                dataGridView_C.RowsDefaultCellStyle.Alignment = dataGridView_Count.RowsDefaultCellStyle.Alignment =
-                    DataGridViewContentAlignment.MiddleRight;
-            
+                dataGridView_Binsert.RowsDefaultCellStyle.Alignment = dataGridView_C.RowsDefaultCellStyle.Alignment =
+                    dataGridView_Count.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             UpdateStateMemory(0);
         }
 
@@ -173,10 +181,16 @@ namespace CourseWork27
         /// </summary>
         /// <param name="count">Счетчик.</param>
         /// <param name="c">Обновляемый регистр С.</param>
-        public void UpdateInfoRegister(uint c, byte count)
+        /// <param name="b">Обновляемый регистр B insert.</param>
+        public void UpdateInfoRegister(uint c, byte count, uint b)
         {
+            // update B_insert.
+            var result = Convert.ToString(b, 2).PadLeft(32, '0');
+            for (int i = 17 - 1, q = 31; i >= 0; i--, q--)
+                dataGridView_Binsert.Rows[0].Cells[i].Value = result[q];
+
             // update Count.
-            var result = Convert.ToString(count, 2).PadLeft(4, '0');
+            result = Convert.ToString(count, 2).PadLeft(4, '0');
             for (var i = 4 - 1; i >= 0; i--)
                 dataGridView_Count.Rows[0].Cells[i].Value = result[i];
 
@@ -282,16 +296,16 @@ namespace CourseWork27
 
         private void checkBox_x0_0_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_x0_0.Checked) 
+            if (checkBox_x0_0.Checked)
                 checkBox_X0_1.Checked = false;
         }
 
         private void checkBox_X0_1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox_X0_1.Checked) 
+            if (checkBox_X0_1.Checked)
                 checkBox_x0_0.Checked = false;
         }
-        
+
         #endregion
 
         #region Buttons
@@ -365,7 +379,7 @@ namespace CourseWork27
         {
             _manageMachine.Reset();
             _microProgram.Reset();
-            UpdateInfoRegister(0, 0);
+            UpdateInfoRegister(0, 0, 0);
             UpdateStateMemory(0);
         }
 

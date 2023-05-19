@@ -113,7 +113,7 @@
 
             _run = _operationMachine.Run;
             // Вывод информации на остальные схемы.
-            _mainForm.UpdateInfoRegister(_operationMachine.C, _operationMachine.Count);
+            _mainForm.UpdateInfoRegister(_operationMachine.C, _operationMachine.Count, _operationMachine.B);
             _mainForm.UpdateStateMemory(_a);
             _mainForm.UpdateInfoKc(_t, _y, _d, _operationMachine.X);
         }
@@ -171,7 +171,7 @@
             _y[8] = _t[13] || _t[14];
             _y[9] = _t[15];
             _y[10] = _t[16];
-            _y[11] = _t[19] = _t[20];
+            _y[11] = _t[19] || _t[20];
             _y[12] = _t[1] || _t[2] || _t[3] || _t[4];
             _y[13] = _t[17] || _t[18];
         }
