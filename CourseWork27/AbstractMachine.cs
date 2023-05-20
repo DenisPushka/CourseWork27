@@ -64,7 +64,7 @@ namespace CourseWork27
                     A &= 0x8000;
                     A |= (ushort)(B & 0x7fff);
                 },
-                () => { C = (uint)(((~A + 0x1) | 0x18000) + C + 0x1); }, // 0xc000
+                () => { C = (uint)((~A | 0x18000) + C + 0x1); },
                 () => { C = (uint)(C + ((ushort)(A << 1) >> 1)); }, // y3.
 
                 () => { C <<= 1; }, // y4.
@@ -98,10 +98,10 @@ namespace CourseWork27
         internal void LogicalDevice()
         {
             X[1] = (A & 0x7fff) == 0;
-            X[2] = C == 1;
+            X[2] = C == 0;
             X[3] = C << 15 >> 31 == 1;
             X[4] = Count == 0;
-            X[5] = (B & 0x1) == 0;
+            X[5] = (B & 0x1) == 1;
             X[6] = ((A >> 15) ^ (B >> 16)) == 1;
         }
     }
